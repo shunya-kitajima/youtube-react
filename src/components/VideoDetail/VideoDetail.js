@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import { fetchSelectedData } from '../../apis';
 import { Store } from '../../store/index';
 import VideoPlay from '../VideoPlay/VideoPlay';
+import Style from './VideoDetail.module.scss';
+import Linkify from 'react-linkify';
 
 const VideoDetail = () => {
     const location = useLocation();
@@ -22,11 +24,13 @@ const VideoDetail = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return globalState.selected && globalState.selected.id ? (
-        <div>
+        <div className={Style.wrap}>
             <VideoPlay id={globalState.selected.id} />
             <p>{globalState.selected.snippet.title}</p>
             <hr />
-            <pre>{globalState.selected.snippet.description}</pre>
+            <Linkify>
+                <pre>{globalState.selected.snippet.description}</pre>
+            </Linkify>
         </div>
     ) : (<span>no data</span>)
 };
