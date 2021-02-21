@@ -9,9 +9,9 @@ const initialState = {
 const reducer = (state, action) => {
     switch(action.type) {
         case 'SET_POPULAR':
-            return { popular: action.payload.popular };
+            return { ...state, popular: action.payload.popular };
         case 'SET_RELATED':
-            return { popular: action.payload.related };
+            return { ...state, related: action.payload.related };
         case 'SET_SELECTED':
             return { ...state, selected: action.payload.selected };  
         default:
