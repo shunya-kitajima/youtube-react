@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { Store } from '../../store/index';
 import { fetchRelatedData } from '../../apis/index';
+import SideListItem from '../SideListItem/SideListItem';
+import Style from './SideList.module.scss';
 
 const SideList = () => {
     const { globalState, setGlobalState } = useContext(Store);
@@ -14,7 +16,7 @@ const SideList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [globalState.selected]);
     return (
-        <div>
+        <div className={Style.sidenav}>
             {
                 globalState.related ? globalState.related.map((video) => {
                     return  (
