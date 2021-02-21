@@ -15,7 +15,18 @@ const SideList = () => {
     }, [globalState.selected]);
     return (
         <div>
-            
+            {
+                globalState.related ? globalState.related.map((video) => {
+                    return  (
+                        <SideListItem
+                            id={video.id.videoId}
+                            key={video.id.videoId}
+                            src={video.snippet.thumnails.medium.url}
+                            title={video.snippet.title}
+                        />
+                    )
+                }) : <span>no data</span>
+            }
         </div>
     )
 };
