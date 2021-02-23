@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext } from 'react';
 import Layout from '../components/layout/Layout';
 import SideList from '../components/SideList/SideList';
 import VideoDetail from '../components/VideoDetail/VideoDetail';
