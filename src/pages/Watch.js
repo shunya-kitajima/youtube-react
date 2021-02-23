@@ -9,7 +9,7 @@ import { fetchSelectedData, fetchRelatedData } from '../apis/index';
 const Watch = () => {
     const { setGlobalSate } = useContext(Store);
     const location = useLocation();
-    const SetVideos = async () => {
+    const setVideos = async () => {
         const searchParams = new URLSearchParams(location.search);
         const id = searchParams.get('v');
         if (id) {
@@ -19,7 +19,7 @@ const Watch = () => {
         }
     };
     useEffect(() => {
-        SetVideos();
+        setVideos();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location.search]);
     return (
