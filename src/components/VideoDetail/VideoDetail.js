@@ -6,7 +6,6 @@ import Linkify from 'react-linkify';
 
 const VideoDetail = () => {
     const { globalState } = useContext(Store);
-    
     return globalState.selected && globalState.selected.id ? (
         <div className={Style.wrap}>
             <VideoPlay id={globalState.selected.id} />
