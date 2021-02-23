@@ -1,5 +1,5 @@
-import React, { useEffect, useContext } from 'react'
-import Layout from '../components/layout/Layout'
+import React, { useEffect, useContext } from 'react';
+import Layout from '../components/layout/Layout';
 import { fetchPopularData } from '../apis/index';
 import { Store } from '../store/index';
 import VideoGrid from '../components/VideoGrid/VideoGrid';
