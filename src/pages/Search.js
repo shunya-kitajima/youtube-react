@@ -3,6 +3,8 @@ import Layout from '../components/layout/Layout';
 import { useLocation } from 'react-router-dom';
 import { fetchSearchData } from '../apis';
 import { Store } from '../store/index';
+import VideoGrid from '../components/VideoGrid/VideoGrid';
+import VideoGridItem from '../components/VideoGridItem/VideoGridItem';
 
 const Search = () => {
     const { globalState, setGlobalState} = useContext(Store);
@@ -22,7 +24,19 @@ const Search = () => {
     }, []);
     return (
         <Layout>
-            Search page
+            <VideoGrid>
+                {
+                    globalState.searched ? globalState.searched.map((search) => {
+                        return (
+                            <VideoGridItem
+                                id={search.id.VideoId}
+                                key={search.id.videoId}
+                                src={search.snippet.thumbnails.medium.url}
+                                title={search.snippet.title}/>
+                        )
+                    }) : <span>no data</span>
+                }
+            </VideoGrid>
         </Layout>  
     );
 }
