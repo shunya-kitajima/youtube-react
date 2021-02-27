@@ -29,7 +29,7 @@ const Search = () => {
                     globalState.searched ? globalState.searched.map((search) => {
                         return (
                             <VideoGridItem
-                                id={search.id.VideoId}
+                                id={search.id.videoId}
                                 key={search.id.videoId}
                                 src={search.snippet.thumbnails.medium.url}
                                 title={search.snippet.title}/>
